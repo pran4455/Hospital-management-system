@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Garamond;
+            background-image: url("{% static 'hospital.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .surgery{
+            width: 40%;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 10px 10px 10px 0;
+            text-align: center;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            text-size-adjust: 30px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .options {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .option-box {
+            background-color:rgb(255, 255, 255, 0.7);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+            width: 50%;
+        }
+        .option-box:hover {
+            transform: scale(1.1);
+        }
+        .option-icon {
+            font-size: 60px;
+            color: #007bff;
+        }
+        .option-title {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+        .option-button {
+            background-color: #007BFF;
+            height: 40%;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .option-button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black; }
+        }
+    </style>
+</head>
+<body>
+    <div class="surgery">
+        <div class="header">
+            <h1>SURGERY DOCTOR</h1>
+        </div>
+        <div class="options">
+            <div class="option-box">
+                <i class="fas fa-calendar-plus option-icon" style="color: #007BFF;"></i>
+                <div class="option-title"></div>
+                <button class="option-button">SCHEDULE SURGERY</button>
+            </div>
+            <div class="option-box">
+                <i class="fas fa-calendar-check option-icon" style="color:#007BFF;"></i>
+                <div class="option-title"></div>
+                <button class="option-button">VIEW SURGERY</button>
+            </div>
+            <div class="option-box">
+                <i class="fas fa-notes-medical option-icon" style="color:#007BFF;"></i>
+                <div class="option-title"></div>
+                <button class="option-button">ADD TREATMENT DETAILS</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
