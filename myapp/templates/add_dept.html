@@ -18,36 +18,39 @@
             height: 100vh;
         }
 
-        .login-container {
-            width: 30%;
-            background-color: rgba(255, 255, 255, 0.5);
+        .container {
+            width: 35%;
+            background-color: rgba(255, 255, 255, 0.6);
             padding: 20px;
-            border-radius: 50px;
+            border-radius: 20px;
             box-shadow: 10px 10px 10px 0;
             text-align: center;
         }
+
         .header {
             background-color: #007BFF;
             color: #fff;
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
-        .login-container h1 {
+
+        .container h1 {
             font-size: 24px;
             margin-bottom: 10px;
         }
 
-        .login-container input {
-            width: 60%;
+        .container input {
+            width: 80%;
             padding: 10px;
             margin: 15px;
             border: 1px solid #ccc;
             border-radius: 10px;
+            box-sizing: border-box; 
         }
 
-        .login-container button {
+        .container button {
             background-color: #007BFF;
             color: #fff;
             padding: 10px 20px;
@@ -57,14 +60,9 @@
             transition: transform 0.2s;
         }
 
-        .login-container button:hover {
+        .container button:hover,
+        .container button:active {
             transform: scale(1.1);
-            background-color: #0056b3;
-        }
-
-        .login-container button:active {
-            transform: scale(1.1);
-            transition: transform 5s;
             background-color: #0056b3;
         }
 
@@ -82,37 +80,19 @@
             text-decoration: underline;
             color: #0056b3;
         }
-        .fa-user button:active {
-            transform: scale(1.1);
-            transition: transform 5s;
-            background-color: #0056b3;   
-        }
-        .fa-eye button:active {
-            transform: scale(1.1);
-            transition: transform 5s;
-            background-color: #0056b3;
-        }
     </style>
 </head>
 
 <body>
-    <div class="login-container">
+    <div class="container">
         <div class="header">
-            <h1>LOGIN</h1>
+            <h1>ADD DEPARTMENT</h1>
         </div>
-        <form method="post" action="{% url 'login' %}">
+        <form method="post" action="{% url 'add_dept' %}">
             {% csrf_token %}
-            <input type="text" name="username" placeholder="Username" required>
-            <button type="submit" id="fa-user"><i class="fa-solid fa-user fa-sm" style="color: #ffffff" ></i></button>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" id="fa-eye"><i class="far fa-eye fa-sm" style="color: #ffffff"></i></button>
-            <button type="submit">Login</button>
+            <input type="text" name="dept_name" placeholder="Department Name" required>
+            <button type="submit" id="submit-button">SUBMIT</button>
         </form>
     </div>
-    {% if alertmessage %}
-    <script>
-            alert('{{alertmessage}}');
-    </script>
-    {% endif %}
 </body>
 </html>

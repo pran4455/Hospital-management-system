@@ -110,5 +110,10 @@
             </div>
         </div>
     </div>
+    {% if alertmessage %}
+    <script>
+            alert('{{alertmessage}}');
+    </script>
+    {% endif %}
 </body>
 </html>

@@ -64,18 +64,23 @@
             margin-top: 10px;
             font-size: 18px; 
         }
+        
         .option-button {
-            background-color: #007BFF;
-            height: 40px; 
-            color: #fff;
-            padding: 8px 16px; 
-            border: none;
-            border-radius: 5px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.2s;
+            border: 1px solid #007BFF;
+            background-color: #007BFF;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
+        
         .option-button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Change the color on hover if desired */
         }
 
         @keyframes typing {
@@ -98,24 +103,29 @@
             <div class="option-box">
                 <i class="fas fa-hospital option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">MANAGE OPERATING ROOM</button>
+                <a href="{% url 'manage_oproom' %}" class="option-button">MANAGE OPERATING ROOM</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-building option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">MANAGE DEPARTMENT</button>
+                <a href="{% url 'manage_dept' %}" class="option-button">MANAGE DEPARTMENT</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-user-md option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">MANAGE DOCTOR</button>
+                <a href="{% url 'manage_doc' %}" class="option-button">MANAGE DOCTOR</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-users option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">MANAGE STAFF</button>
+                <a href="{% url 'manage_staff' %}" class="option-button">MANAGE STAFF</a>
             </div>
         </div>
     </div>
+    {% if alertmessage %}
+    <script>
+            alert('{{alertmessage}}');
+    </script>
+    {% endif %}
 </body>
 </html>
