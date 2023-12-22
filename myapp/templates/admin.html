@@ -83,6 +83,31 @@
             background-color: #0056b3; /* Change the color on hover if desired */
         }
 
+        .header button {
+            position: absolute;
+            top: 20px; 
+            right: 20px;
+            background-color: #007BFF;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .header button:hover {
+            transform: scale(1.4);
+            background-color: #0056b3; 
+        }
+
+        .header button:active {
+            transform: scale(1.1);
+            transition: transform 5s;
+            background-color: #007BFF;
+        }
+
+
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -98,6 +123,7 @@
     <div class="admin-page">
         <div class="header">
             <h1>ADMINISTRATOR</h1>
+            <button type="button" id="login-button" onclick="window.location.href='/'">Logout</button>
         </div>
         <div class="options">
             <div class="option-box">

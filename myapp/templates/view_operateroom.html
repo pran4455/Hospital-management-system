@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Registered operaterooms</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/display_registered_operaterooms.css' %}">
+        <style>
+            body {
+                font-family: Garamond;
+                background-image: url("{% static 'hospital.jpeg' %}");
+                background-size: cover;
+                background-position: center;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+    
+            .container {
+                width: 50%;
+                background-color: rgba(255, 255, 255, 0.6);
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: 10px 10px 10px 0;
+                text-align: center;
+            }
+    
+            h1 {
+                text-align: center;
+                color: #333;
+                padding: 10px 10px;
+            }
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                box-shadow: 10px 10px 10px 0; /* Fixed the syntax error here */
+                overflow: hidden;
+            }
+    
+            th, td {
+                border: 1px solid #e9e9e9;
+                text-align: center;
+                padding: 12px;
+            }
+    
+            th {
+                background-color: #007BFF;
+                color: white;
+            }
+    
+            tr:nth-child(even) {
+                background-color: #92e7ea;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: #54e3e8;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <div class="container">
+            <h2>Operate Rooms</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for operateroom in operaterooms %}
+                    <tr>
+                        <td>{{ operateroom.room_number }}</td>
+                        <td>{{ operateroom.department }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="home-link">
+                <a href="{% url 'admin' %}" class="option-button">Back to Home</a>
+            </div>
+        </div>
+    </body>
+</html>

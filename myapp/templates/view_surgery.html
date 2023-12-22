@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registered Surgery Doctor</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/display_registered_doctors.css' %}">
+        <style>
+            body {
+                font-family: Garamond;
+                background-image: url("{% static 'hospital.jpeg' %}");
+                background-size: cover;
+                background-position: center;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+    
+            .container {
+                width: 50%;
+                background-color: rgba(255, 255, 255, 0.6);
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: 10px 10px 10px 0;
+                text-align: center;
+            }
+    
+            h1 {
+                text-align: center;
+                color: #333;
+                padding: 10px 10px;
+            }
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                box-shadow: 10px 10px 10px 0; /* Fixed the syntax error here */
+                overflow: hidden;
+            }
+    
+            th, td {
+                border: 1px solid #e9e9e9;
+                text-align: center;
+                padding: 12px;
+            }
+    
+            th {
+                background-color: #007BFF;
+                color: white;
+            }
+    
+            tr:nth-child(even) {
+                background-color: #92e7ea;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: #54e3e8;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <div class="container">
+            <h2>Surgery Doctor Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Room Number</th>
+                        <th>Surgery Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for doctor in doctors %}
+                    <tr>
+                        <td>{{ doctor.patient_name }}</td>
+                        <td>{{ doctor.room_number }}</td>
+                        <td>{{ doctor.surgery_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="home-link">
+                <a href="{% url 'surgerydoc' %}" class="option-button">Go to home</a>
+            </div>
+        </div>
+    </body>
+</html>

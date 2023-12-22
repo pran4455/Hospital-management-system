@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {%load static%}
+{%load static%}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,17 +104,17 @@
             <div class="option-box">
                 <i class="fas fa-pencil-alt option-icon" style="color:#007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">UPDATE</button>
+                <a href="{% url 'updatedoctor' %}" class="option-button">UPDATE</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-trash-alt option-icon" style="color:#007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">DELETE</button>
+                <a href="{% url 'deldoctor' %}" class="option-button">DELETE</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-eye option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">VIEW</button>
+                <a href="{% url 'viewdoctor' %}" class="option-button">VIEW</a>
             </div>
         </div>
     </div>

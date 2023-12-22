@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Garamond;
+            background-image: url("{% static 'hospital.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 35%;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px 0;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .container input {
+            width: 80%;
+            padding: 10px;
+            margin: 15px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            box-sizing: border-box; 
+        }
+
+        .container button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .container button:hover,
+        .container button:active {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        .container select {
+        width: 80%;
+        padding: 10px;
+        margin: 15px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        appearance: none; 
+        background-color: #fff;
+        color: #333;
+        }
+
+        .container select:hover,
+        .container select:focus {
+            border-color: #007BFF;
+        }
+
+        .container select option {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .container select option:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>UPDATE STAFF</h1>
+        </div>
+        <form method="post" action="{% url 'update_staff' %}">
+            {% csrf_token %}
+            <input type="text" name="omail" placeholder="Old Email" required>
+            <input type="text" name="nmail" placeholder="New Email" required>
+            <input type="text" name="newcont" placeholder="New Contact" required>
+            <input type="text" name="dept" placeholder="New Department Name" required>
+            <button type="submit" id="submit-button">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>

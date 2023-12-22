@@ -64,19 +64,25 @@
             margin-top: 10px;
             font-size: 18px; 
         }
+        
         .option-button {
-            background-color: #007BFF;
-            height: 40px; 
-            color: #fff;
-            padding: 8px 16px; 
-            border: none;
-            border-radius: 5px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.2s;
+            border: 1px solid #007BFF;
+            background-color: #007BFF;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
+        
         .option-button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Change the color on hover if desired */
         }
+
 
         @keyframes typing {
             from { width: 0 }
@@ -92,28 +98,18 @@
 <body>
     <div class="admin-page">
         <div class="header">
-            <h1>MANAGE OPERATION ROOM</h1>
+            <h1>MANAGE PATIENT</h1>
         </div>
         <div class="options">
             <div class="option-box">
                 <i class="fas fa-plus option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <a href="{% url 'add_patient' %}" class="option-button">ADD</a>
-            </div>
-            <div class="option-box">    
-                <i class="fas fa-pencil-alt option-icon" style="color:#007BFF;"></i>
-                <div class="option-title"></div>
-                <button class="option-button">UPDATE</button>
-            </div>
-            <div class="option-box">
-                <i class="fas fa-trash-alt option-icon" style="color:#007BFF;"></i>
-                <div class="option-title"></div>
-                <button class="option-button">DELETE</button>
+                <a href="{% url 'addpatient' %}" class="option-button">ADD</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-eye option-icon" style="color: #007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">VIEW</button>
+                <a href="{% url 'view_patient_staff' %}" class="option-button">VIEW</a>
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@
 <html>
 {%load static%}
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -16,12 +18,12 @@
             align-items: center;
             height: 100vh;
         }
-        .surgery{
-            width: 40%;
-            background-color: rgba(255, 255, 255, 0.5);
+        .surgery {
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
-            border-radius: 50px;
-            box-shadow: 10px 10px 10px 0;
+            border-radius: 20px; 
+            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2); 
             text-align: center;
         }
         .header {
@@ -29,9 +31,8 @@
             color: #fff;
             padding: 20px 0;
             text-align: center;
-            text-size-adjust: 30px;
-            border-top-left-radius: 20px;
             border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
         }
         h1 {
             font-size: 24px;
@@ -42,38 +43,68 @@
             justify-content: space-around;
         }
         .option-box {
-            background-color:rgb(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.7);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
             text-align: center;
             transition: transform 0.2s;
             cursor: pointer;
-            width: 50%;
+            width: 45%; 
+            margin: 10px; 
         }
         .option-box:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .option-icon {
             font-size: 60px;
-            color: #007bff;
+            color: #007BFF;
         }
         .option-title {
             margin-top: 10px;
-            font-size: 24px;
+            font-size: 18px; 
         }
+        
         .option-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid #007BFF;
             background-color: #007BFF;
-            height: 40%;
-            color: #fff;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .option-button:hover {
+            background-color: #0056b3; /* Change the color on hover if desired */
+        }
+
+        .header button {
+            position: absolute;
+            top: 20px; 
+            right: 20px;
+            background-color: #007BFF;
+            color: #000;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.2s;
         }
-        .option-button:hover {
-            background-color: #0056b3;
+
+        .header button:hover {
+            transform: scale(1.4);
+            background-color: #0056b3; 
+        }
+
+        .header button:active {
+            transform: scale(1.1);
+            transition: transform 5s;
+            background-color: #007BFF;
         }
 
         @keyframes typing {
@@ -90,23 +121,19 @@
 <body>
     <div class="surgery">
         <div class="header">
-            <h1>DOCTOR</h1>
+            <h1>GENERAL DOCTOR</h1>
+            <button type="button" id="login-button" onclick="window.location.href='/'">Logout</button>
         </div>
         <div class="options">
             <div class="option-box">
-                <i class="fas fa-calendar-plus option-icon" style="color: #007BFF;"></i>
-                <div class="option-title"></div>
-                <button class="option-button">BOOK APPOINTMENT</button>
-            </div>
-            <div class="option-box">
                 <i class="fas fa-calendar-check option-icon" style="color:#007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">VIEW APPOINTMENT</button>
+                <a href="{% url 'viewtreatmentd' %}" class="option-button">VIEW TREATMENT DETAILS</a>
             </div>
             <div class="option-box">
                 <i class="fas fa-notes-medical option-icon" style="color:#007BFF;"></i>
                 <div class="option-title"></div>
-                <button class="option-button">ADD TREATMENT DETAILS</button>
+                <a href="{% url 'addtreatd' %}" class="option-button">ADD TREATMENT DETAILS</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Garamond;
+            background-image: url('hospital.jpeg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 35%;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px 0;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .container input {
+            width: 80%;
+            padding: 10px;
+            margin: 15px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            box-sizing: border-box; 
+        }
+
+        .container button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .container button:hover,
+        .container button:active {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        .container select {
+        width: 80%;
+        padding: 10px;
+        margin: 15px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        appearance: none; 
+        background-color: #fff;
+        color: #333;
+        }
+
+        .container select:hover,
+        .container select:focus {
+            border-color: #007BFF;
+        }
+
+        .container select option {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .container select option:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SCHEDULE NEXT APPOINTMENT</h1>
+        </div>
+        <form>
+            <input type="text" name="patient_name" placeholder="Patient Name" required>
+            <input type="text" name="doc_name" placeholder="Doctor Name" required>
+            <input type="date" name="appoint_date" placeholder="Appointment Date" required>
+            <input type="time" name="appoint_time" placeholder="Appointment Time" required>
+            <button type="submit" id="submit-button">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>
