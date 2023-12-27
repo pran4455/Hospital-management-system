@@ -364,6 +364,10 @@ def del_staff(request):
         a = connection.delstaff(email=mail,
                                 name=name)
         
+        print(a)
+
+        print(mail,name)
+        
         if not a:
             return render(request, 'admin.html', {'alertmessage': 'Incorrect information, please try again'})
         else:
