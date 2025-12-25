@@ -263,6 +263,8 @@ def add_treatment_details(patient_name,email, doctor_name,docemail, treatment_de
         cursor.execute("SELECT PatientID FROM Patients WHERE Names = :patient_name and email=:email", patient_name=patient_name,email=email)
         patient_id = cursor.fetchone()
 
+        print(1)
+
         if not patient_id:
             return False
 
@@ -270,6 +272,7 @@ def add_treatment_details(patient_name,email, doctor_name,docemail, treatment_de
         cursor.execute("SELECT DoctorID FROM Doctors WHERE Names = :doctor_name and email=:docemail", doctor_name=doctor_name,docemail=docemail)
         doctor_id = cursor.fetchone()
 
+        print(1)
         if not doctor_id:
             return False
 
